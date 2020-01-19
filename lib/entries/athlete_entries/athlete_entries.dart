@@ -1,6 +1,6 @@
 import 'package:choss_media/entries/athlete_entries/athlete_entry.dart';
 
-List<AthleteEntry> athletes = <AthleteEntry> [
+List<AthleteEntry> athleteEntries = <AthleteEntry> [
   AthleteEntry(
     name: 'Miles Adamson',
     nickname: "Mr. Miles",

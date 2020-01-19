@@ -1,7 +1,10 @@
 import 'package:choss_media/components/header.dart';
 import 'package:choss_media/components/tab_bar.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
+import 'components/blocs/content/content_bloc.dart';
+import 'components/side_drawer.dart';
 
 /*
 flutter packages pub global activate webdev
@@ -31,24 +34,39 @@ class ChossMediaHomePage extends StatefulWidget {
 }
 
 class ChossMediaHomePageState extends State<ChossMediaHomePage> {
-
   ChossMediaHomePageState();
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SingleChildScrollView(
-        child: Center(
-            child: Column(
-          children: <Widget>[
-            Header(
-              heightRatio: 1.0,
-            ),
-            ChossTabBar(),
-          ],
-        )),
+      drawer: SideDrawer(),
+      appBar: AppBar(
+        automaticallyImplyLeading: false,
+        actions: <Widget>[
+          Builder(builder: (context) {
+            return IconButton(
+              icon: Icon(Icons.menu),
+              onPressed: () => Scaffold.of(context).openDrawer(),
+            );
+          })
+        ],
+      ),
+      body: BlocBuilder(
+        bloc: ContentBloc.getInstance(),
+        builder: (context, ContentState state) {
+          return ListView.builder(
+            itemCount: state.content.length + 1,
+              itemBuilder: (context, i) {
+            if (i == 0) {
+              return Header(
+                heightRatio: 1.0,
+              );
+            } else {
+              return state.content[i - 1];
+            }
+          });
+        }
       ),
     );
   }
-
 }

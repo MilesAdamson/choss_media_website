@@ -10,7 +10,7 @@ class AthletesTab extends StatelessWidget {
         padding: EdgeInsets.symmetric(vertical: 32.0),
         child: Wrap(
           alignment: WrapAlignment.spaceEvenly,
-          children: athletes,
+          children: athleteEntries,
         ),
       ),
     );
