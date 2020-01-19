@@ -36,7 +36,7 @@ List<PhotoEntry> photoEntries = [
   PhotoEntry(
     takenBy: 'Miles Adamson',
     title: "Red Rocks Highball",
-    flavourText: "Reddit really gave me shit for calling this one an FA, but I really think it was.",
+    flavourText: "Reddit gave me shit for calling this one an FA, but I really think it was.",
     assetPath: "/assets/photos/matt_hardest_gym",
   ),
 
