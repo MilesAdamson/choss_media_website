@@ -1,6 +1,7 @@
 import 'package:choss_media/entries/athlete_entries/athlete_entry.dart';
+import 'package:flutter/material.dart';
 
-List<AthleteEntry> athleteEntries = <AthleteEntry> [
+List<AthleteEntry> athleteEntries = <AthleteEntry>[
   AthleteEntry(
     name: 'Miles Adamson',
     nickname: "Mr. Miles",
@@ -62,3 +63,17 @@ List<AthleteEntry> athleteEntries = <AthleteEntry> [
     igURL: null,
   ),
 ];
+
+class AthleteEntry {
+  final String name;
+  final String nickname;
+  final String photoPath;
+  final String igURL;
+
+  AthleteEntry({
+    @required this.name,
+    @required this.igURL,
+    @required this.nickname,
+    @required this.photoPath,
+  });
+}

@@ -1,20 +1,14 @@
-import 'package:flutter/material.dart';
+import 'package:choss_media/entries/athlete_entries/athlete_entries.dart';
 import 'package:flutter/material.dart';
 import 'dart:html' as html;
 
 import 'package:choss_media/components/dynamic_card.dart';
 
-class AthleteEntry extends StatelessWidget {
-  final String name;
-  final String nickname;
-  final String photoPath;
-  final String igURL;
+class AthleteProfile extends StatelessWidget {
+  final AthleteEntry athleteEntry;
 
-  AthleteEntry(
-      {@required this.name,
-      @required this.igURL,
-      @required this.nickname,
-      @required this.photoPath});
+  AthleteProfile(
+      {@required this.athleteEntry});
 
   @override
   Widget build(BuildContext context) {
@@ -29,14 +23,14 @@ class AthleteEntry extends StatelessWidget {
             Padding(
               padding: EdgeInsets.symmetric(vertical: 4.0, horizontal: 8.0),
               child: Text(
-                name,
+                athleteEntry.name,
                 style: TextStyle(fontSize: 16.0),
               ),
             ),
             Padding(
               padding: EdgeInsets.symmetric(vertical: 4.0, horizontal: 8.0),
               child: Text(
-                nickname,
+                athleteEntry.nickname,
                 style: TextStyle(color: Colors.grey[500], fontSize: 14.0),
               ),
             ),
@@ -56,7 +50,7 @@ class AthleteEntry extends StatelessWidget {
     return Stack(
       children: <Widget>[
         Image.network(
-          photoPath,
+          athleteEntry.photoPath,
           height: size,
           width: size,
           fit: BoxFit.fitWidth,
@@ -72,7 +66,7 @@ class AthleteEntry extends StatelessWidget {
   }
 
   Widget instaButton(BuildContext context) {
-    if (igURL == null) {
+    if (athleteEntry.igURL == null) {
       return Container();
     }
     double size = MediaQuery.of(context).size.width * 0.03;
@@ -80,7 +74,7 @@ class AthleteEntry extends StatelessWidget {
       size = 25.0;
     }
     return GestureDetector(
-      onTap: () => html.window.open(igURL, "name?"),
+      onTap: () => html.window.open(athleteEntry.igURL, "name?"),
       child: Image.network(
         '/assets/insta.png',
         height: size,

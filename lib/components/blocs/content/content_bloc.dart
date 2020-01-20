@@ -1,5 +1,6 @@
 import 'package:choss_media/entries/app_entries/app_entires.dart';
 import 'package:choss_media/entries/athlete_entries/athlete_entries.dart';
+import 'package:choss_media/entries/athlete_entries/athlete_entry.dart';
 import 'package:choss_media/entries/photo_entries/photo_entries.dart';
 import 'package:choss_media/entries/photo_entries/photo_entry.dart';
 import 'package:choss_media/entries/video_entries/video_entries.dart';
@@ -84,7 +85,11 @@ class ContentSelected extends ContentState {
         return photoEntries;
         break;
       case ContentSelection.Athletes:
-        return athleteEntries;
+        return athleteEntries
+            .map((a) => AthleteProfile(
+                  athleteEntry: a,
+                ))
+            .toList();
         break;
       case ContentSelection.Apps:
         return appEntries;
