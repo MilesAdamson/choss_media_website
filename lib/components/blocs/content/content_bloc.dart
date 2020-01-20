@@ -82,10 +82,14 @@ class ContentSelected extends ContentState {
   List<Widget> get content {
     switch (contentSelection) {
       case ContentSelection.Photos:
-        return photoEntries;
+        return photoEntries
+            .map((p) => PhotoContent(
+                  photoEntry: p,
+                ))
+            .toList();
         break;
       case ContentSelection.Athletes:
-        return athleteEntries
+        return athleteEntries.values
             .map((a) => AthleteProfile(
                   athleteEntry: a,
                 ))
