@@ -28,9 +28,6 @@ class Header extends StatelessWidget {
 
   Widget chossMediaRow(BuildContext context, bool isSmallScreen) {
     return Container(
-      height: isSmallScreen
-          ? MediaQuery.of(context).size.height * 0.05
-          : MediaQuery.of(context).size.height * 0.15,
       color: Colors.white30,
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
@@ -40,9 +37,7 @@ class Header extends StatelessWidget {
             padding: EdgeInsets.only(right: 16.0),
             child: Image.network(
               '/assets/icon.png',
-              height: isSmallScreen
-                  ? MediaQuery.of(context).size.height * 0.05
-                  : MediaQuery.of(context).size.height * 0.15,
+              height: 100
             ),
           ),
           Padding(
@@ -75,7 +70,7 @@ class Header extends StatelessWidget {
                               boxShadow: <BoxShadow>[
                                 BoxShadow(
                                   color: Colors.black26,
-                                  spreadRadius: 1.0
+                                  spreadRadius: 0.5
                                 )
                               ]
                             ),
