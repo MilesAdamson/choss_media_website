@@ -1,9 +1,9 @@
+import 'package:choss_media/components/blocs/content/content_bloc.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 class Header extends StatelessWidget {
-  final double heightRatio;
-
-  Header({@required this.heightRatio});
+  Header();
 
   @override
   Widget build(BuildContext context) {
@@ -29,8 +29,8 @@ class Header extends StatelessWidget {
   Widget chossMediaRow(BuildContext context, bool isSmallScreen) {
     return Container(
       height: isSmallScreen
-          ? MediaQuery.of(context).size.height * heightRatio * 0.05
-          : MediaQuery.of(context).size.height * heightRatio * 0.15,
+          ? MediaQuery.of(context).size.height * 0.05
+          : MediaQuery.of(context).size.height * 0.15,
       color: Colors.white30,
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
@@ -41,16 +41,42 @@ class Header extends StatelessWidget {
             child: Image.network(
               '/assets/icon.png',
               height: isSmallScreen
-                  ? MediaQuery.of(context).size.height * heightRatio * 0.05
-                  : MediaQuery.of(context).size.height * heightRatio * 0.15,
+                  ? MediaQuery.of(context).size.height * 0.05
+                  : MediaQuery.of(context).size.height * 0.15,
             ),
           ),
           Padding(
             padding: EdgeInsets.only(left: 16.0),
-            child: Text(
-              'Choss Media',
-              style: TextStyle(
-                  color: Colors.white, fontSize: isSmallScreen ? 16.0 : 48.0),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: <Widget>[
+                Text(
+                  'Choss Media',
+                  style: TextStyle(
+                      color: Colors.white,
+                      fontSize: isSmallScreen ? 16.0 : 48.0),
+                ),
+                BlocBuilder(
+                  bloc: ContentBloc.getInstance(),
+                  builder: (context, ContentState state) {
+                    return Row(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: <Widget>[
+                        state.icon(),
+                        Container(
+                          width: 16.0,
+                        ),
+                        Text(
+                          state.contentSelection.toString().split(".").last,
+                          style: TextStyle(color: Colors.white,fontSize: isSmallScreen ? 14.0 : 20.0),
+                        ),
+                      ],
+                    );
+                  },
+                )
+              ],
             ),
           )
         ],

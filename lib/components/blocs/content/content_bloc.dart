@@ -53,6 +53,8 @@ abstract class ContentState {
   ContentState({@required this.contentSelection});
 
   List<Widget> get content;
+
+  Icon icon({double size});
 }
 
 class ContentChanging extends ContentState {
@@ -64,6 +66,12 @@ class ContentChanging extends ContentState {
 
   @override
   List<Widget> get content => <Widget>[];
+
+  @override
+  Icon icon({double size}) => Icon(
+        Icons.menu,
+        color: Colors.transparent,
+      );
 }
 
 class ContentSelected extends ContentState {
@@ -91,6 +99,46 @@ class ContentSelected extends ContentState {
 
   @override
   String toString() => 'ContentSelected: $contentSelection';
+
+  @override
+  Icon icon({double size}) {
+    switch (contentSelection) {
+      case ContentSelection.Photos:
+        return Icon(
+          Icons.photo,
+          size: size ?? 30,
+          color: Colors.white,
+        );
+        break;
+      case ContentSelection.Athletes:
+        return Icon(
+          Icons.people,
+          size: size ?? 30,
+          color: Colors.white,
+        );
+        break;
+      case ContentSelection.Apps:
+        return Icon(
+          Icons.apps,
+          size: size ?? 30,
+          color: Colors.white,
+        );
+        break;
+      case ContentSelection.Videos:
+        return Icon(
+          Icons.video_call,
+          size: size ?? 30,
+          color: Colors.white,
+        );
+        break;
+      default:
+        return Icon(
+          Icons.menu,
+          color: Colors.transparent,
+          size: size ?? 30,
+        );
+    }
+  }
 }
 
 // EVENTS

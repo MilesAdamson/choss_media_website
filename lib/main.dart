@@ -1,5 +1,4 @@
 import 'package:choss_media/components/header.dart';
-import 'package:choss_media/components/tab_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -59,9 +58,7 @@ class ChossMediaHomePageState extends State<ChossMediaHomePage> {
             itemCount: state.content.length + 1,
               itemBuilder: (context, i) {
             if (i == 0) {
-              return Header(
-                heightRatio: 1.0,
-              );
+              return Header();
             } else {
               return state.content[i - 1];
             }

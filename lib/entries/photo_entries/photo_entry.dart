@@ -1,4 +1,3 @@
-import 'package:choss_media/components/tabs/photos_tab.dart';
 import 'package:flutter/material.dart';
 
 class PhotoEntry extends StatelessWidget {
