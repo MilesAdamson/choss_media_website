@@ -54,8 +54,14 @@ class Header extends StatelessWidget {
                 Text(
                   'Choss Media',
                   style: TextStyle(
+                      shadows: <Shadow>[
+                        Shadow(
+                          color: Colors.black,
+                          blurRadius: 4.0,
+                        ),
+                      ],
                       color: Colors.white,
-                      fontSize: isSmallScreen ? 16.0 : 48.0),
+                      fontSize: isSmallScreen ? 20.0 : 48.0),
                 ),
                 BlocBuilder(
                   bloc: ContentBloc.getInstance(),
@@ -64,13 +70,30 @@ class Header extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.start,
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: <Widget>[
-                        state.icon(),
                         Container(
-                          width: 16.0,
+                            decoration: BoxDecoration(
+                              boxShadow: <BoxShadow>[
+                                BoxShadow(
+                                  color: Colors.black26,
+                                  spreadRadius: 1.0
+                                )
+                              ]
+                            ),
+                            child: state.icon(size: isSmallScreen ? 16 : null)),
+                        Container(
+                          width: isSmallScreen ? 8.0 : 16.0,
                         ),
                         Text(
                           state.contentSelection.toString().split(".").last,
-                          style: TextStyle(color: Colors.white,fontSize: isSmallScreen ? 14.0 : 20.0),
+                          style: TextStyle(
+                              shadows: <Shadow>[
+                                Shadow(
+                                  color: Colors.black,
+                                  blurRadius: 4.0,
+                                ),
+                              ],
+                              color: Colors.white,
+                              fontSize: isSmallScreen ? 14.0 : 26.0),
                         ),
                       ],
                     );
