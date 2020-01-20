@@ -14,7 +14,8 @@ class AthleteCircleAvatar extends StatelessWidget {
         shape: BoxShape.circle,
         image: DecorationImage(
           fit: BoxFit.cover,
-          image: NetworkImage(athleteEntry.photoPath),
+          image: NetworkImage(
+              athleteEntry.photoPath.split(".").first + "_avatar.png"),
         ),
       ),
       width: 75.0,

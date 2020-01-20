@@ -48,7 +48,7 @@ List<PhotoEntry> photoEntries = [
     assetPath: "/assets/photos/matt_hardest_gym",
   ),
   PhotoEntry(
-    athleteEntry: athleteEntries['andrew'],
+    athleteEntry: athleteEntries['matt'],
     takenBy: 'Andrew Funk',
     title: "The 2nd Ascent of Purgatory - V9",
     flavourText:
