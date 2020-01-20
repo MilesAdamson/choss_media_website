@@ -16,12 +16,12 @@ class DarkListTile extends StatelessWidget {
     return ListTile(
       title: Text(
         title,
-        style: TextStyle(color: Colors.white),
+        style: TextStyle(color: Colors.black),
       ),
       onTap: onTap,
       leading: Icon(
         iconData,
-        color: Colors.white,
+        color: Colors.black87,
       ),
     );
   }

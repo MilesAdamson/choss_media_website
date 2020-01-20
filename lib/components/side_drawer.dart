@@ -7,61 +7,58 @@ class SideDrawer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Drawer(
-      child: Container(
-        color: Colors.black,
-        child: Column(
-          children: <Widget>[
-            Container(
-              color: Colors.white,
-              child: ListTile(
-                leading: Image.network('icons/icon-750.png'),
-                title: Text(
-                  'Choss Media',
-                ),
-              ),
-            ),
-            Container(
-              height: 1,
-              color: Colors.white54,
-            ),
-            DarkListTile(
-              iconData: Icons.photo,
-              title: 'Photos',
-              onTap: () => ContentBloc.select(ContentSelection.Photos),
-            ),
-            Container(
-              height: 1,
-              color: Colors.white54,
-            ),
-            DarkListTile(
-              iconData: Icons.apps,
-              title: 'Apps',
-              onTap: () => ContentBloc.select(ContentSelection.Apps),
-            ),
-            Container(
-              height: 1,
-              color: Colors.white54,
-            ),
-            DarkListTile(
-              iconData: Icons.video_call,
-              title: 'Videos',
-              onTap: () => ContentBloc.select(ContentSelection.Videos),
-            ),
-            Container(
-              height: 1,
-              color: Colors.white54,
-            ),
-            DarkListTile(
-              iconData: Icons.people,
-              title: 'Athletes',
-              onTap: () => ContentBloc.select(ContentSelection.Athletes),
-            ),
-            Container(
-              height: 1,
-              color: Colors.white54,
-            ),
-          ],
-        ),
+      child: Column(
+        children: <Widget>[
+          Padding(
+            padding: EdgeInsets.symmetric(vertical: 16.0),
+            child: Center(
+                child: Image.network(
+              'icons/icon-750.png',
+              height: 150.0,
+              width: 150,
+            )),
+          ),
+          Container(
+            height: 1,
+            color: Colors.black54,
+          ),
+          DarkListTile(
+            iconData: Icons.photo,
+            title: 'Photos',
+            onTap: () => ContentBloc.select(ContentSelection.Photos),
+          ),
+          Container(
+            height: 1,
+            color: Colors.black54,
+          ),
+          DarkListTile(
+            iconData: Icons.apps,
+            title: 'Apps',
+            onTap: () => ContentBloc.select(ContentSelection.Apps),
+          ),
+          Container(
+            height: 1,
+            color: Colors.black54,
+          ),
+          DarkListTile(
+            iconData: Icons.video_call,
+            title: 'Videos',
+            onTap: () => ContentBloc.select(ContentSelection.Videos),
+          ),
+          Container(
+            height: 1,
+            color: Colors.black54,
+          ),
+          DarkListTile(
+            iconData: Icons.people,
+            title: 'Athletes',
+            onTap: () => ContentBloc.select(ContentSelection.Athletes),
+          ),
+          Container(
+            height: 1,
+            color: Colors.black54,
+          ),
+        ],
       ),
     );
   }

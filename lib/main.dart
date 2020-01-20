@@ -41,6 +41,7 @@ class ChossMediaHomePageState extends State<ChossMediaHomePage> {
     return Scaffold(
       drawer: SideDrawer(),
       appBar: AppBar(
+        backgroundColor: Colors.black87,
         automaticallyImplyLeading: false,
         actions: <Widget>[
           Builder(builder: (context) {
