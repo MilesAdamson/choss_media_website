@@ -3,14 +3,14 @@ import 'package:flutter/material.dart';
 
 List<PhotoEntry> photoEntries = [
   PhotoEntry(
-    athleteEntry: athleteEntries['zack'],
+    athleteEntry: athleteEntries[AthleteNames.zach],
     takenBy: 'Miles Adamson',
     title: "Zach and a Core Shot",
     flavourText: '"Was it scary?" "Yeah I guess", he says.',
     assetPath: "/assets/photos/zach_coreshot",
   ),
   PhotoEntry(
-    athleteEntry: athleteEntries['alex'],
+    athleteEntry: athleteEntries[AthleteNames.alex],
     takenBy: 'Miles Adamson',
     title: "Alex Fricker on Boatswain 2: The Steepening",
     flavourText:
@@ -19,13 +19,13 @@ List<PhotoEntry> photoEntries = [
   ),
   PhotoEntry(
     takenBy: 'Miles Adamson',
-    athleteEntry: athleteEntries['morgan'],
+    athleteEntry: athleteEntries[AthleteNames.morgan],
     title: "Morgan at the Lookout",
     flavourText: "A 30% chance of rain is a 70% chance to climb.",
     assetPath: "/assets/photos/morgan_lookout",
   ),
   PhotoEntry(
-    athleteEntry: athleteEntries['morgan'],
+    athleteEntry: athleteEntries[AthleteNames.morgan],
     takenBy: 'Miles Adamson',
     title: "-10 in March",
     flavourText:
@@ -33,14 +33,14 @@ List<PhotoEntry> photoEntries = [
     assetPath: "/assets/photos/morgan_tube",
   ),
   PhotoEntry(
-    athleteEntry: athleteEntries['alex'],
+    athleteEntry: athleteEntries[AthleteNames.alex],
     takenBy: 'Miles Adamson',
     title: "Sphinx - 13d",
     flavourText: "Impressively first graded 13a, this route is closer to 14a.",
     assetPath: "/assets/photos/alex_sphinx",
   ),
   PhotoEntry(
-    athleteEntry: athleteEntries['matt'],
+    athleteEntry: athleteEntries[AthleteNames.matt],
     takenBy: 'Miles Adamson',
     title: "Red Rocks Highball",
     flavourText:
@@ -48,7 +48,7 @@ List<PhotoEntry> photoEntries = [
     assetPath: "/assets/photos/matt_hardest_gym",
   ),
   PhotoEntry(
-    athleteEntry: athleteEntries['matt'],
+    athleteEntry: athleteEntries[AthleteNames.matt],
     takenBy: 'Andrew Funk',
     title: "The 2nd Ascent of Purgatory - V9",
     flavourText:
@@ -56,14 +56,14 @@ List<PhotoEntry> photoEntries = [
     assetPath: "/assets/photos/matt_purgatory",
   ),
   PhotoEntry(
-    athleteEntry: athleteEntries['matt'],
+    athleteEntry: athleteEntries[AthleteNames.matt],
     takenBy: 'Zach Watson',
     title: "Solitaire (V8)",
     flavourText: "Big boi doing big boi moves",
     assetPath: "/assets/photos/matt_solitare",
   ),
   PhotoEntry(
-    athleteEntry: athleteEntries['miles'],
+    athleteEntry: athleteEntries[AthleteNames.miles],
     takenBy: 'Unknown',
     title: "Animal Magnitism - V8",
     flavourText:
@@ -71,7 +71,7 @@ List<PhotoEntry> photoEntries = [
     assetPath: "/assets/photos/miles_animal_mag",
   ),
   PhotoEntry(
-    athleteEntry: athleteEntries['miles'],
+    athleteEntry: athleteEntries[AthleteNames.miles],
     takenBy: 'Unknown',
     title: "The Derek Zoolander Highball",
     flavourText:

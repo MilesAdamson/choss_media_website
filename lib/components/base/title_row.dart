@@ -21,9 +21,12 @@ class TitleRow extends StatelessWidget {
       padding: EdgeInsets.symmetric(vertical: 8.0),
       child: Row(
         children: <Widget>[
-          ...avatarPaths.map((p) => ChossAvatar(
-                path: p,
-              )),
+          ...avatarPaths.map((p) => Padding(
+            padding: EdgeInsets.only(right: 4.0),
+            child: ChossAvatar(
+                  path: p,
+                ),
+          )),
           Container(
             width: 16.0,
           ),
