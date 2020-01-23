@@ -1,4 +1,4 @@
-import 'package:choss_media/entries/athlete_entries/athlete_entries.dart';
+import 'package:choss_media/entries/athlete_entries.dart';
 import 'package:flutter/material.dart';
 
 List<VideoEntry> videoEntries = <VideoEntry>[

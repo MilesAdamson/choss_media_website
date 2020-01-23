@@ -1,6 +1,6 @@
 import 'package:choss_media/components/base/content_card.dart';
 import 'package:choss_media/components/base/title_row.dart';
-import 'package:choss_media/entries/video_entries/video_entries.dart';
+import 'package:choss_media/entries/video_entries.dart';
 import 'package:flutter/material.dart';
 
 import 'dart:html' as html;

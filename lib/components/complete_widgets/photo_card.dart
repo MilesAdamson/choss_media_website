@@ -1,6 +1,6 @@
 import 'package:choss_media/components/base/content_card.dart';
 import 'package:choss_media/components/base/title_row.dart';
-import 'package:choss_media/entries/photo_entries/photo_entries.dart';
+import 'package:choss_media/entries/photo_entries.dart';
 import 'package:flutter/material.dart';
 
 class PhotoCard extends StatelessWidget {

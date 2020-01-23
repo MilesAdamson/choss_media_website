@@ -1,10 +1,10 @@
+import 'package:choss_media/components/complete_widgets/athlete_card.dart';
 import 'package:choss_media/components/complete_widgets/video_card.dart';
-import 'package:choss_media/entries/app_entries/app_entires.dart';
-import 'package:choss_media/entries/athlete_entries/athlete_entries.dart';
-import 'package:choss_media/components/athlete_entry.dart';
-import 'package:choss_media/entries/photo_entries/photo_entries.dart';
+import 'package:choss_media/entries/app_entires.dart';
+import 'package:choss_media/entries/athlete_entries.dart';
+import 'package:choss_media/entries/photo_entries.dart';
 import 'package:choss_media/components/complete_widgets/photo_card.dart';
-import 'package:choss_media/entries/video_entries/video_entries.dart';
+import 'package:choss_media/entries/video_entries.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:bloc/bloc.dart';
 import 'package:flutter/material.dart';
@@ -91,7 +91,7 @@ class ContentSelected extends ContentState {
         break;
       case ContentSelection.Athletes:
         return athleteEntries.values
-            .map((a) => AthleteProfile(
+            .map((a) => AthleteCard(
                   athleteEntry: a,
                 ))
             .toList();
