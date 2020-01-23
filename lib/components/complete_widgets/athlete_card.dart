@@ -34,7 +34,10 @@ class AthleteCard extends StatelessWidget {
                   avatarPaths: <String>[],
                 ),
                 Divider(),
-                Text(athleteEntry.fullBio, style: TextStyle(fontSize: 14.0),)
+                Padding(
+                  padding: EdgeInsets.all(16.0),
+                  child: Text(athleteEntry.fullBio, style: TextStyle(fontSize: 14.0),),
+                )
               ],
             ),
           ),
