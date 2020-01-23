@@ -14,7 +14,7 @@ Map<String, AthleteEntry> athleteEntries = <String, AthleteEntry>{
     photoPath: "assets/athletes/matt.jpg",
     igURL: "https://www.instagram.com/k_i_l_l_a_b_e_e/?hl=en",
   ),
-  "zack": AthleteEntry(
+  "zach": AthleteEntry(
     name: 'Zach Watson',
     nickname: "The BIG PURPS",
     photoPath: "assets/athletes/zach.jpg",
@@ -72,9 +72,9 @@ class AthleteEntry {
 
   AthleteEntry({
     @required this.name,
-    @required this.igURL,
     @required this.nickname,
     @required this.photoPath,
+    this.igURL,
   });
 
   String get avatarPath => photoPath.split(".").first + "_avatar.png";

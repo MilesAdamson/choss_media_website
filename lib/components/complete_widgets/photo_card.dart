@@ -16,7 +16,7 @@ class PhotoCard extends StatelessWidget {
         children: <Widget>[
           TitleRow(
             flavourText: photoEntry.flavourText,
-            avatarPath: photoEntry.athleteEntry.avatarPath,
+            avatarPaths: <String>[photoEntry.athleteEntry.avatarPath],
             title: photoEntry.title,
             detail: "Photo by: ${photoEntry.takenBy}",
           ),

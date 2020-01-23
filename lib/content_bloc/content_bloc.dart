@@ -1,3 +1,4 @@
+import 'package:choss_media/components/complete_widgets/video_card.dart';
 import 'package:choss_media/entries/app_entries/app_entires.dart';
 import 'package:choss_media/entries/athlete_entries/athlete_entries.dart';
 import 'package:choss_media/components/athlete_entry.dart';
@@ -99,7 +100,11 @@ class ContentSelected extends ContentState {
         return appEntries;
         break;
       case ContentSelection.Videos:
-        return videoEntries;
+        return videoEntries
+            .map((v) => VideoCard(
+                  videoEntry: v,
+                ))
+            .toList();
         break;
       default:
         return <Widget>[];
