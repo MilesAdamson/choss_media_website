@@ -1,8 +1,8 @@
 import 'package:choss_media/entries/app_entries/app_entires.dart';
 import 'package:choss_media/entries/athlete_entries/athlete_entries.dart';
-import 'package:choss_media/entries/athlete_entries/athlete_entry.dart';
+import 'package:choss_media/components/athlete_entry.dart';
 import 'package:choss_media/entries/photo_entries/photo_entries.dart';
-import 'package:choss_media/entries/photo_entries/photo_entry.dart';
+import 'package:choss_media/components/complete_widgets/photo_card.dart';
 import 'package:choss_media/entries/video_entries/video_entries.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:bloc/bloc.dart';
@@ -83,7 +83,7 @@ class ContentSelected extends ContentState {
     switch (contentSelection) {
       case ContentSelection.Photos:
         return photoEntries
-            .map((p) => PhotoContent(
+            .map((p) => PhotoCard(
                   photoEntry: p,
                 ))
             .toList();

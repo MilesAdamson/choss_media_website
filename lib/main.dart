@@ -2,7 +2,7 @@ import 'package:choss_media/components/header.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import 'components/blocs/content/content_bloc.dart';
+import 'package:choss_media/content_bloc/content_bloc.dart';
 import 'components/side_drawer.dart';
 
 /*

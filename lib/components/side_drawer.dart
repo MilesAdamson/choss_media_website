@@ -1,7 +1,7 @@
-import 'package:choss_media/components/blocs/content/content_bloc.dart';
+import 'package:choss_media/content_bloc/content_bloc.dart';
 import 'package:flutter/material.dart';
 
-import 'dark_list_tile.dart';
+import 'package:choss_media/components/base/dark_list_tile.dart';
 
 class SideDrawer extends StatelessWidget {
   @override

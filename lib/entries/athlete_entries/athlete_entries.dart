@@ -1,4 +1,4 @@
-import 'package:choss_media/entries/athlete_entries/athlete_entry.dart';
+import 'package:choss_media/components/athlete_entry.dart';
 import 'package:flutter/material.dart';
 
 Map<String, AthleteEntry> athleteEntries = <String, AthleteEntry>{
@@ -76,4 +76,6 @@ class AthleteEntry {
     @required this.nickname,
     @required this.photoPath,
   });
+
+  String get avatarPath => photoPath.split(".").first + "_avatar.png";
 }
