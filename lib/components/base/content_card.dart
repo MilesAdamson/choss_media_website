@@ -7,13 +7,20 @@ class ContentCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: EdgeInsets.symmetric(vertical: 4.0),
-      child: Card(
-        elevation: 4.0,
+    return Center(
+      child: Container(
+        constraints: BoxConstraints(
+          maxWidth: 1200
+        ),
         child: Padding(
-          padding: EdgeInsets.all(16.0),
-          child: child,
+          padding: EdgeInsets.symmetric(vertical: 4.0),
+          child: Card(
+            elevation: 4.0,
+            child: Padding(
+              padding: EdgeInsets.all(16.0),
+              child: child,
+            ),
+          ),
         ),
       ),
     );

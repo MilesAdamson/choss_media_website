@@ -25,7 +25,10 @@ class SideDrawer extends StatelessWidget {
           DarkListTile(
             iconData: Icons.photo,
             title: 'Photos',
-            onTap: () => ContentBloc.select(ContentSelection.Photos),
+            onTap: () {
+              ContentBloc.select(ContentSelection.Photos);
+              Navigator.pop(context);
+            },
           ),
           Container(
             height: 1,
@@ -34,7 +37,10 @@ class SideDrawer extends StatelessWidget {
           DarkListTile(
             iconData: Icons.apps,
             title: 'Apps',
-            onTap: () => ContentBloc.select(ContentSelection.Apps),
+            onTap: () {
+              ContentBloc.select(ContentSelection.Apps);
+              Navigator.pop(context);
+            },
           ),
           Container(
             height: 1,
@@ -43,7 +49,10 @@ class SideDrawer extends StatelessWidget {
           DarkListTile(
             iconData: Icons.video_call,
             title: 'Videos',
-            onTap: () => ContentBloc.select(ContentSelection.Videos),
+            onTap: () {
+              ContentBloc.select(ContentSelection.Videos);
+              Navigator.pop(context);
+            },
           ),
           Container(
             height: 1,
@@ -52,7 +61,10 @@ class SideDrawer extends StatelessWidget {
           DarkListTile(
             iconData: Icons.people,
             title: 'Athletes',
-            onTap: () => ContentBloc.select(ContentSelection.Athletes),
+            onTap: () {
+              ContentBloc.select(ContentSelection.Athletes);
+              Navigator.pop(context);
+            },
           ),
           Container(
             height: 1,

@@ -54,15 +54,18 @@ class ChossMediaHomePageState extends State<ChossMediaHomePage> {
       body: BlocBuilder(
         bloc: ContentBloc.getInstance(),
         builder: (context, ContentState state) {
-          return ListView.builder(
-            itemCount: state.content.length + 1,
-              itemBuilder: (context, i) {
-            if (i == 0) {
-              return Header();
-            } else {
-              return state.content[i - 1];
-            }
-          });
+          return Container(
+            color: Colors.grey[300],
+            child: ListView.builder(
+              itemCount: state.content.length + 1,
+                itemBuilder: (context, i) {
+              if (i == 0) {
+                return Header();
+              } else {
+                return state.content[i - 1];
+              }
+            }),
+          );
         }
       ),
     );
