@@ -1,3 +1,4 @@
+import 'package:choss_media/components/base/border_button.dart';
 import 'package:choss_media/components/header.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -43,31 +44,52 @@ class ChossMediaHomePageState extends State<ChossMediaHomePage> {
         backgroundColor: Colors.black87,
         automaticallyImplyLeading: false,
         actions: <Widget>[
-          Builder(builder: (context) {
-            return IconButton(
-              icon: Icon(Icons.menu),
-              onPressed: () => Scaffold.of(context).openDrawer(),
-            );
-          })
+          BorderButton(
+            iconData: Icons.photo_library,
+            text: "Photos",
+            onPressed: () {
+              ContentBloc.select(ContentSelection.Photos);
+            },
+          ),
+          BorderButton(
+            text: "Videos",
+            iconData: Icons.video_call,
+            onPressed: () {
+              ContentBloc.select(ContentSelection.Videos);
+            },
+          ),
+          BorderButton(
+            iconData: Icons.apps,
+            text: "Apps",
+            onPressed: () {
+              ContentBloc.select(ContentSelection.Apps);
+            },
+          ),
+          BorderButton(
+            iconData: Icons.people,
+            text: "Athletes",
+            onPressed: () {
+              ContentBloc.select(ContentSelection.Athletes);
+            },
+          ),
         ],
       ),
       body: BlocBuilder(
-        bloc: ContentBloc.getInstance(),
-        builder: (context, ContentState state) {
-          return Container(
-            color: Colors.grey[300],
-            child: ListView.builder(
-              itemCount: state.content.length + 1,
-                itemBuilder: (context, i) {
-              if (i == 0) {
-                return Header();
-              } else {
-                return state.content[i - 1];
-              }
-            }),
-          );
-        }
-      ),
+          bloc: ContentBloc.getInstance(),
+          builder: (context, ContentState state) {
+            return Container(
+              color: Colors.grey[300],
+              child: ListView.builder(
+                  itemCount: state.content.length + 1,
+                  itemBuilder: (context, i) {
+                    if (i == 0) {
+                      return Header();
+                    } else {
+                      return state.content[i - 1];
+                    }
+                  }),
+            );
+          }),
     );
   }
 }
