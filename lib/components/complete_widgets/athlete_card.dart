@@ -24,7 +24,7 @@ class AthleteCard extends StatelessWidget {
             alignment: Alignment.center,
           ),
           Container(
-            width: MediaQuery.of(context).size.width * 0.4,
+            width: 400,
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
