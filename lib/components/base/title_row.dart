@@ -1,3 +1,4 @@
+import 'package:choss_media/components/base/title_text.dart';
 import 'package:choss_media/entries/athlete_entries.dart';
 import 'package:flutter/material.dart';
 
@@ -9,6 +10,7 @@ class TitleRow extends StatelessWidget {
   final String flavourText;
   final String detail;
   final Widget leading;
+  final double fractionWidth;
 
   TitleRow({
     @required this.title,
@@ -16,6 +18,7 @@ class TitleRow extends StatelessWidget {
     this.flavourText,
     this.detail,
     this.avatarPaths,
+    this.fractionWidth = 0.5
   });
 
   @override
@@ -39,24 +42,31 @@ class TitleRow extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
-              Text(
+              SizedText(
                 title,
-                style: TextStyle(color: Colors.black, fontSize: 32.0),
+                max: 32.0,
+                min: 16.0,
+                fractionWidth: fractionWidth,
               ),
               if (flavourText != null)
                 Padding(
                   padding: EdgeInsets.symmetric(vertical: 8.0),
-                  child: Text(
+                  child: SizedText(
                     flavourText,
-                    style: TextStyle(color: Colors.black, fontSize: 16.0),
+                    max: 16.0,
+                    min: 11.0,
+                    fractionWidth: fractionWidth,
                   ),
                 ),
               if (detail != null)
                 Padding(
                   padding: EdgeInsets.only(bottom: 2.0),
-                  child: Text(
+                  child: SizedText(
                     detail,
-                    style: TextStyle(color: Colors.grey, fontSize: 14.0),
+                    max: 14.0,
+                    min: 9.0,
+                    color: Colors.grey,
+                    fractionWidth: fractionWidth,
                   ),
                 ),
             ],
