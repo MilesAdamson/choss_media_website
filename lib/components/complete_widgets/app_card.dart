@@ -25,10 +25,10 @@ class AppCardState extends State<AppCard> {
       child: landscape
           ? Row(
               mainAxisAlignment: MainAxisAlignment.start,
-              crossAxisAlignment: CrossAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: children())
           : Container(
-              height: MediaQuery.of(context).size.height * 2,
+              height: MediaQuery.of(context).size.height * 1.3,
               child: Column(
                 children: children(),
               ),
@@ -48,8 +48,6 @@ class AppCardState extends State<AppCard> {
       Padding(
         padding: EdgeInsets.symmetric(horizontal: 32.0),
         child: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          mainAxisAlignment: MainAxisAlignment.start,
           children: <Widget>[
             TitleRow(
               fractionWidth: 0.4,
