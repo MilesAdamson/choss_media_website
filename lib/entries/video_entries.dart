@@ -3,6 +3,12 @@ import 'package:flutter/material.dart';
 
 List<VideoEntry> videoEntries = <VideoEntry>[
   VideoEntry(
+    title: "First Ascent of Too Tall to Fall - V10",
+    featuring: [AthleteNames.miles, AthleteNames.matt, AthleteNames.andrew, AthleteNames.alex],
+    path: '/assets/videos/too_tall.jpg',
+    youtubeUrl: 'https://www.youtube.com/watch?v=fkJ9DJcgi9g',
+  ),
+  VideoEntry(
     title: 'Boatswain 2: The Steepening - 13c/R',
     featuring: [AthleteNames.zach, AthleteNames.miles, AthleteNames.alex],
     path: '/assets/videos/boatswain.jpg',

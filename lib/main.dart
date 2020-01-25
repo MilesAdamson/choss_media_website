@@ -6,12 +6,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:choss_media/content_bloc/content_bloc.dart';
 import 'components/side_drawer.dart';
 
-/*
-flutter packages pub global activate webdev
-flutter packages pub global run webdev serve
-flutter packages pub global run webdev build
- */
-
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
