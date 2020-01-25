@@ -7,12 +7,14 @@ class TitleRow extends StatelessWidget {
   final String title;
   final String flavourText;
   final String detail;
+  final Widget leading;
 
   TitleRow({
-    @required this.avatarPaths,
     @required this.title,
+    @required this.leading,
     this.flavourText,
     this.detail,
+    this.avatarPaths,
   });
 
   @override
@@ -21,6 +23,9 @@ class TitleRow extends StatelessWidget {
       padding: EdgeInsets.symmetric(vertical: 8.0),
       child: Row(
         children: <Widget>[
+          if(leading != null)
+          leading,
+          if(avatarPaths != null)
           ...avatarPaths.map((p) => Padding(
             padding: EdgeInsets.only(right: 4.0),
             child: ChossAvatar(

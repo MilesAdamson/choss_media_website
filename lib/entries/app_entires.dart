@@ -1,12 +1,13 @@
-import 'app_entry.dart';
+import 'package:flutter/material.dart';
 
 List<AppEntry> appEntries = <AppEntry>[
   AppEntry(
     iconPath: "/assets/apps/interval/icon.png",
-    storeLink: "https://play.google.com/store/apps/details?id=com.miles.adamson.interval&hl=en",
+    storeLink:
+        "https://play.google.com/store/apps/details?id=com.miles.adamson.interval&hl=en",
     title: "Interval Timer and Statistics",
     description:
-    "With interval, you can create, edit and copy workouts easily. Cloning, moving and editing workout items takes seconds, allowing you to spend more time working out.\n\n"
+        "With interval, you can create, edit and copy workouts easily. Cloning, moving and editing workout items takes seconds, allowing you to spend more time working out.\n\n"
         "The workout timer has large progress indicators and text for great readability when you phone is a couple feet away. Preview workout items to come in a scrolling list below it. "
         "This app has a single in-app-purchase for the full version. The full version unlocks limitations on how many workouts you can save, and the statistics/logging package."
         "\n\nThe statistics database records entries based on keywords you choose. Every time a workout items name matches a keyword, a statistic is recorded automatically."
@@ -21,7 +22,8 @@ List<AppEntry> appEntries = <AppEntry>[
     ],
   ),
   AppEntry(
-    storeLink: "https://play.google.com/store/apps/details?id=com.adamson.miles.climbingtrainer&hl=en_CA",
+    storeLink:
+        "https://play.google.com/store/apps/details?id=com.adamson.miles.climbingtrainer&hl=en_CA",
     title: "Climbing Coach",
     description:
         "Climbing Coach - The Personal Trainer requires no special permissions, has no ads and no subscription fees. It does not even require internet - the exercise database comes with the initial download.\n\n"
@@ -42,3 +44,19 @@ List<AppEntry> appEntries = <AppEntry>[
     ],
   ),
 ];
+
+class AppEntry {
+  final String storeLink;
+  final String title;
+  final String description;
+  final String iconPath;
+  final List<String> gallery;
+
+  AppEntry({
+    @required this.title,
+    @required this.description,
+    @required this.gallery,
+    @required this.iconPath,
+    @required this.storeLink,
+  });
+}
