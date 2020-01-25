@@ -18,7 +18,7 @@ Map<AthleteNames, AthleteEntry> athleteEntries = <AthleteNames, AthleteEntry>{
     nickname: "Mr. Miles",
     photoPath: "assets/athletes/miles.jpg",
     igURL: "https://www.instagram.com/miles_adamson/?hl=en",
-    fullBio: "TODOf ewoihf hwfohew ofiwh foeiwh fowehif eow iwh fowehif eow hfowhf owhi foweh fowehi fewohi riwh fowehif eow hfowhf owhi foweh fowehi fewohi riwh fowehif eow hfowhf owhi foweh fowehi fewohi riwh fowehif eow hfowhf owhi foweh fowehi fewohi riwh fowehif eow hfowhf owhi foweh fowehi fewohi riwh fowehif eow hfowhf owhi foweh fowehi fewohi riwh fowehif eow hfowhf owhi foweh fowehi fewohi riwh fowehif eow hfowhf owhi foweh fowehi fewohi riwh fowehif eow hfowhf owhi foweh fowehi fewohi riwh fowehif eow hfowhf owhi foweh fowehi fewohi riwh fowehif eow hfowhf owhi foweh fowehi fewohi riwh fowehif eow hfowhf owhi foweh fowehi fewohi rhfowhf owhi foweh fowehi fewohi rfwoihf ",
+    fullBio: "TODO WRITE BIO TODO WRITE BIO TODO WRITE BIO TODO WRITE BIO TODO WRITE BIO TODO WRITE BIO TODO WRITE BIO TODO WRITE BIO TODO WRITE BIO TODO WRITE BIO ",
   ),
   AthleteNames.matt: AthleteEntry(
     name: 'Matt Hendsbee',
