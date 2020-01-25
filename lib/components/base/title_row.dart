@@ -14,11 +14,11 @@ class TitleRow extends StatelessWidget {
 
   TitleRow({
     @required this.title,
-    @required this.leading,
+    this.leading,
     this.flavourText,
     this.detail,
     this.avatarPaths,
-    this.fractionWidth = 0.5
+    @required this.fractionWidth,
   });
 
   @override

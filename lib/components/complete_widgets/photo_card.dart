@@ -20,6 +20,7 @@ class PhotoCard extends StatelessWidget {
             avatarPaths: <AthleteEntry>[photoEntry.athleteEntry],
             title: photoEntry.title,
             detail: "Photo by: ${photoEntry.takenBy}",
+            fractionWidth: 0.8,
           ),
           Image.network(
             photoEntry.assetPath + '.jpg',

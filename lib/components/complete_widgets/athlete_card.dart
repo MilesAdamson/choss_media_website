@@ -29,6 +29,7 @@ class AthleteCard extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
                 TitleRow(
+                  fractionWidth: 0.6,
                   title: athleteEntry.name,
                   detail: athleteEntry.nickname,
                   avatarPaths: <AthleteEntry>[],

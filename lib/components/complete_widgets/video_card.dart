@@ -19,6 +19,7 @@ class VideoCard extends StatelessWidget {
             title: videoEntry.title,
             flavourText: videoEntry.flavourText,
             avatarPaths: videoEntry.athletes.map((a) => a).toList(),
+            fractionWidth: 0.5,
           ),
           Stack(
             children: <Widget>[

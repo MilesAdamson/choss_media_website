@@ -1,5 +1,6 @@
 import 'package:choss_media/components/base/content_card.dart';
 import 'package:choss_media/components/base/title_row.dart';
+import 'package:choss_media/components/base/title_text.dart';
 import 'package:choss_media/entries/app_entires.dart';
 import 'package:flutter/material.dart';
 import 'dart:html' as html;
@@ -16,60 +17,64 @@ class AppCard extends StatefulWidget {
 class AppCardState extends State<AppCard> {
   int galleryIndex = 0;
 
+  bool get landscape => MediaQuery.of(context).size.width > 1000.0;
+
   @override
   Widget build(BuildContext context) {
     return ContentCard(
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        mainAxisAlignment: MainAxisAlignment.start,
+      child: landscape
+          ? Row(
+              mainAxisAlignment: MainAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: children())
+          : Container(
+              height: MediaQuery.of(context).size.height * 2,
+              child: Column(
+                children: children(),
+              ),
+            ),
+    );
+  }
+
+  List<Widget> children() {
+    return <Widget>[
+      Column(
+        mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
-          Row(
-            mainAxisAlignment: MainAxisAlignment.start,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: <Widget>[
-              Flexible(
-                flex: 1,
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: <Widget>[
-                    galleryImage(),
-                    pageController(),
-                  ],
-                ),
-              ),
-              Flexible(
-                flex: 2,
-                child: Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 32.0),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    children: <Widget>[
-                      TitleRow(
-                        title: widget.appEntry.title,
-                        leading: Image.network(
-                          widget.appEntry.iconPath,
-                          width: 75.0,
-                          fit: BoxFit.fitWidth,
-                          alignment: Alignment.center,
-                        ),
-                      ),
-                      Padding(
-                        padding: EdgeInsets.only(bottom: 64.0, top: 16.0),
-                        child: Text(
-                          widget.appEntry.description,
-                        ),
-                      ),
-                      getItOnGooglePlay(),
-                    ],
-                  ),
-                ),
-              ),
-            ],
-          ),
+          galleryImage(),
+          pageController(),
         ],
       ),
-    );
+      Padding(
+        padding: EdgeInsets.symmetric(horizontal: 32.0),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.start,
+          children: <Widget>[
+            TitleRow(
+              fractionWidth: 0.4,
+              title: widget.appEntry.title,
+              leading: Image.network(
+                widget.appEntry.iconPath,
+                width: 75.0,
+                fit: BoxFit.fitWidth,
+                alignment: Alignment.center,
+              ),
+            ),
+            Padding(
+              padding: EdgeInsets.only(bottom: landscape ? 64.0 : 16.0, top: 16.0),
+              child: SizedText(
+                widget.appEntry.description,
+                max: 16.0,
+                min: 12.0,
+                fractionWidth: landscape ? 0.5 : 0.9,
+              ),
+            ),
+            getItOnGooglePlay(),
+          ],
+        ),
+      ),
+    ];
   }
 
   Widget pageController() {

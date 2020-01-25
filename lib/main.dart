@@ -35,38 +35,43 @@ class ChossMediaHomePageState extends State<ChossMediaHomePage> {
     return Scaffold(
       drawer: SideDrawer(),
       appBar: AppBar(
+        title: SingleChildScrollView(
+          scrollDirection: Axis.horizontal,
+          child: Row(
+            children: <Widget>[
+              BorderButton(
+                iconData: Icons.photo_library,
+                text: "Photos",
+                onPressed: () {
+                  ContentBloc.select(ContentSelection.Photos);
+                },
+              ),
+              BorderButton(
+                text: "Videos",
+                iconData: Icons.video_call,
+                onPressed: () {
+                  ContentBloc.select(ContentSelection.Videos);
+                },
+              ),
+              BorderButton(
+                iconData: Icons.apps,
+                text: "Apps",
+                onPressed: () {
+                  ContentBloc.select(ContentSelection.Apps);
+                },
+              ),
+              BorderButton(
+                iconData: Icons.people,
+                text: "Athletes",
+                onPressed: () {
+                  ContentBloc.select(ContentSelection.Athletes);
+                },
+              ),
+            ],
+          ),
+        ),
         backgroundColor: Colors.black87,
         automaticallyImplyLeading: false,
-        actions: <Widget>[
-          BorderButton(
-            iconData: Icons.photo_library,
-            text: "Photos",
-            onPressed: () {
-              ContentBloc.select(ContentSelection.Photos);
-            },
-          ),
-          BorderButton(
-            text: "Videos",
-            iconData: Icons.video_call,
-            onPressed: () {
-              ContentBloc.select(ContentSelection.Videos);
-            },
-          ),
-          BorderButton(
-            iconData: Icons.apps,
-            text: "Apps",
-            onPressed: () {
-              ContentBloc.select(ContentSelection.Apps);
-            },
-          ),
-          BorderButton(
-            iconData: Icons.people,
-            text: "Athletes",
-            onPressed: () {
-              ContentBloc.select(ContentSelection.Athletes);
-            },
-          ),
-        ],
       ),
       body: BlocBuilder(
           bloc: ContentBloc.getInstance(),
