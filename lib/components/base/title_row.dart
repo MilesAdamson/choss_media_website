@@ -1,9 +1,10 @@
+import 'package:choss_media/entries/athlete_entries.dart';
 import 'package:flutter/material.dart';
 
 import 'choss_avatar.dart';
 
 class TitleRow extends StatelessWidget {
-  final List<String> avatarPaths;
+  final List<AthleteEntry> avatarPaths;
   final String title;
   final String flavourText;
   final String detail;
@@ -23,15 +24,14 @@ class TitleRow extends StatelessWidget {
       padding: EdgeInsets.symmetric(vertical: 8.0),
       child: Row(
         children: <Widget>[
-          if(leading != null)
-          leading,
-          if(avatarPaths != null)
-          ...avatarPaths.map((p) => Padding(
-            padding: EdgeInsets.only(right: 4.0),
-            child: ChossAvatar(
-                  path: p,
-                ),
-          )),
+          if (leading != null) leading,
+          if (avatarPaths != null)
+            ...avatarPaths.map((entry) => Padding(
+                  padding: EdgeInsets.only(right: 4.0),
+                  child: ChossAvatar(
+                    athleteEntry: entry,
+                  ),
+                )),
           Container(
             width: 16.0,
           ),
@@ -43,14 +43,14 @@ class TitleRow extends StatelessWidget {
                 title,
                 style: TextStyle(color: Colors.black, fontSize: 32.0),
               ),
-              if(flavourText != null)
-              Padding(
-                padding: EdgeInsets.symmetric(vertical: 8.0),
-                child: Text(
-                  flavourText,
-                  style: TextStyle(color: Colors.black, fontSize: 16.0),
+              if (flavourText != null)
+                Padding(
+                  padding: EdgeInsets.symmetric(vertical: 8.0),
+                  child: Text(
+                    flavourText,
+                    style: TextStyle(color: Colors.black, fontSize: 16.0),
+                  ),
                 ),
-              ),
               if (detail != null)
                 Padding(
                   padding: EdgeInsets.only(bottom: 2.0),

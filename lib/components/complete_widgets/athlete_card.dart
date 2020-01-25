@@ -31,7 +31,7 @@ class AthleteCard extends StatelessWidget {
                 TitleRow(
                   title: athleteEntry.name,
                   detail: athleteEntry.nickname,
-                  avatarPaths: <String>[],
+                  avatarPaths: <AthleteEntry>[],
                 ),
                 Divider(),
                 Padding(

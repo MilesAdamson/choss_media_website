@@ -18,15 +18,15 @@ class VideoCard extends StatelessWidget {
           TitleRow(
             title: videoEntry.title,
             flavourText: videoEntry.flavourText,
-            avatarPaths: videoEntry.athletes.map((a) => a.avatarPath).toList(),
+            avatarPaths: videoEntry.athletes.map((a) => a).toList(),
           ),
           Stack(
             children: <Widget>[
-          Image.network(
-          videoEntry.path,
-            width: MediaQuery.of(context).size.width,
-            fit: BoxFit.fitWidth,
-          ),
+              Image.network(
+                videoEntry.path,
+                width: MediaQuery.of(context).size.width,
+                fit: BoxFit.fitWidth,
+              ),
               centeredPlayButton(context)
             ],
           ),
