@@ -31,7 +31,7 @@ class VideoCard extends StatelessWidget {
                   fractionWidth: 0.8,
                 ),
                 TitleRow(
-                  fractionWidth: 0.5,
+                  fractionWidth: 0.1,
                   avatarPaths: videoEntry.athletes.map((a) => a).toList(),
                   title: " ",
                 ),

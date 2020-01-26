@@ -53,11 +53,14 @@ class AppCardState extends State<AppCard> {
             TitleRow(
               fractionWidth: 0.4,
               title: widget.appEntry.title,
-              leading: Image.network(
-                widget.appEntry.iconPath,
-                width: 75.0,
-                fit: BoxFit.fitWidth,
-                alignment: Alignment.center,
+              leading: Padding(
+                padding: EdgeInsets.only(right: 16.0),
+                child: Image.network(
+                  widget.appEntry.iconPath,
+                  width: 75.0,
+                  fit: BoxFit.fitWidth,
+                  alignment: Alignment.center,
+                ),
               ),
             ),
             Material(

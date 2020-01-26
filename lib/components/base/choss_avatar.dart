@@ -13,7 +13,7 @@ class ChossAvatar extends StatelessWidget {
   Widget build(BuildContext context) {
 
     double rawSize = (MediaQuery.of(context).size.width / 1000.0) * 75.0;
-    double size = Util.cap(rawSize, min: 20.0, max: 75.0);
+    double size = Util.cap(rawSize, min: 50.0, max: 100.0);
 
     return InkWell(
       onTap: () => showDialog(
