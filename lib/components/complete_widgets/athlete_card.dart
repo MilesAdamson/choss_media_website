@@ -9,8 +9,9 @@ import 'dart:html' as html;
 
 class AthleteCard extends StatefulWidget {
   final AthleteEntry athleteEntry;
+  final bool popup;
 
-  AthleteCard({@required this.athleteEntry});
+  AthleteCard({@required this.athleteEntry, this.popup = false});
 
   @override
   State<StatefulWidget> createState() => AthleteCardState();
@@ -21,7 +22,11 @@ class AthleteCardState extends State<AthleteCard> {
 
   @override
   Widget build(BuildContext context) {
-    return ContentCard(
+    Widget card = ConstrainedBox(
+        constraints: BoxConstraints(
+          maxHeight: 550,
+        ),
+        child: ContentCard(
       child: landscape
           ? Row(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -30,7 +35,28 @@ class AthleteCardState extends State<AthleteCard> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: children(),
             ),
-    );
+    ));
+    if (widget.popup) {
+      return Stack(
+        children: <Widget>[
+          card,
+          Positioned(
+            right: 5.0,
+            top: 5.0,
+            child: Material(
+              elevation: 0.0,
+              color: Colors.transparent,
+              child: IconButton(
+                icon: Icon(Icons.close),
+                onPressed: () => Navigator.pop(context),
+              ),
+            ),
+          ),
+        ],
+      );
+    } else {
+      return card;
+    }
   }
 
   List<Widget> children() {
@@ -54,7 +80,9 @@ class AthleteCardState extends State<AthleteCard> {
             avatarPaths: <AthleteEntry>[],
           ),
           Container(
-              width:  landscape ? MediaQuery.of(context).size.width * 0.5 : MediaQuery.of(context).size.width * 0.9,
+              width: landscape
+                  ? MediaQuery.of(context).size.width * 0.5
+                  : MediaQuery.of(context).size.width * 0.9,
               child: Divider()),
           Padding(
             padding: EdgeInsets.all(16.0),

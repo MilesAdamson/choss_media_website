@@ -20,6 +20,7 @@ class ChossAvatar extends StatelessWidget {
           context: context,
           builder: (context) => AthleteCard(
                 athleteEntry: athleteEntry,
+            popup: true,
               )),
       child: Material(
         borderRadius: BorderRadius.all(Radius.circular(100.0)),
