@@ -2,6 +2,7 @@ import 'package:choss_media/components/base/content_card.dart';
 import 'package:choss_media/components/base/title_row.dart';
 import 'package:choss_media/components/base/title_text.dart';
 import 'package:choss_media/entries/app_entires.dart';
+import 'package:choss_media/util/util.dart';
 import 'package:flutter/material.dart';
 import 'dart:html' as html;
 
@@ -59,13 +60,26 @@ class AppCardState extends State<AppCard> {
                 alignment: Alignment.center,
               ),
             ),
-            Padding(
-              padding: EdgeInsets.only(bottom: landscape ? 64.0 : 16.0, top: 16.0),
-              child: SizedText(
-                widget.appEntry.description,
-                max: 16.0,
-                min: 12.0,
-                fractionWidth: landscape ? 0.5 : 0.9,
+            SingleChildScrollView(
+              scrollDirection: Axis.vertical,
+              child: Material(
+                elevation: 3.0,
+                child: Container(
+                  padding: EdgeInsets.all(8.0),
+                  width: MediaQuery.of(context).size.width *
+                      (landscape ? 0.5 : 0.9),
+                  height: 400,
+                  child: Padding(
+                    padding: EdgeInsets.only(
+                        bottom: landscape ? 64.0 : 16.0, top: 16.0),
+                    child: SizedText(
+                      widget.appEntry.description,
+                      max: 16.0,
+                      min: 12.0,
+                      fractionWidth: landscape ? 0.5 : 0.9,
+                    ),
+                  ),
+                ),
               ),
             ),
             getItOnGooglePlay(),
@@ -112,7 +126,7 @@ class AppCardState extends State<AppCard> {
         padding: EdgeInsets.all(4.0),
         child: Image.network(
           widget.appEntry.gallery[galleryIndex],
-          height: 600,
+          height: Util.cap(MediaQuery.of(context).size.height * 0.6, min: 400, max: MediaQuery.of(context).size.height * 0.9),
           fit: BoxFit.fitHeight,
           alignment: Alignment.center,
         ),
