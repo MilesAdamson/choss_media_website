@@ -13,11 +13,12 @@ class BorderButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    bool small = MediaQuery.of(context).size.width < 700;
     return Padding(
-      padding: EdgeInsets.all(8.0),
+      padding: EdgeInsets.all(small ? 0.0 : 8.0),
       child: Container(
-        decoration:
-            BoxDecoration(border: Border.all(color: Colors.white, width: 1)),
+        decoration: BoxDecoration(
+            border: !small ? Border.all(color: Colors.white, width: 1) : null),
         child: FlatButton(
           child: Row(
             children: <Widget>[
@@ -25,13 +26,15 @@ class BorderButton extends StatelessWidget {
                 iconData,
                 color: Colors.white,
               ),
-              Container(
-                width: 16.0,
-              ),
-              Text(
-                text,
-                style: TextStyle(color: Colors.white),
-              ),
+              if (!small)
+                Container(
+                  width: 16.0,
+                ),
+              if (!small)
+                Text(
+                  text,
+                  style: TextStyle(color: Colors.white),
+                ),
             ],
           ),
           onPressed: onPressed,

@@ -9,18 +9,11 @@ class Header extends StatelessWidget {
   Widget build(BuildContext context) {
     return Stack(
       children: <Widget>[
-        if (MediaQuery.of(context).size.width <= 1080)
-          Image.network(
-            '/assets/cover_1080.jpg',
-            fit: BoxFit.fitWidth,
-            width: MediaQuery.of(context).size.width,
-          )
-        else
-          Image.network(
-            '/assets/cover_large.jpg',
-            fit: BoxFit.fitWidth,
-            width: MediaQuery.of(context).size.width,
-          ),
+        Image.network(
+          '/assets/cover_1080.jpg',
+          fit: BoxFit.fitWidth,
+          width: MediaQuery.of(context).size.width,
+        ),
         chossMediaRow(context, MediaQuery.of(context).size.width < 700),
       ],
     );
@@ -28,17 +21,14 @@ class Header extends StatelessWidget {
 
   Widget chossMediaRow(BuildContext context, bool isSmallScreen) {
     return Container(
-      color: Colors.white30,
+      color: !isSmallScreen ? Colors.white30 : null,
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: <Widget>[
           Padding(
             padding: EdgeInsets.only(right: 16.0),
-            child: Image.network(
-              '/assets/icon.png',
-              height: 100
-            ),
+            child: Image.network('/assets/icon.png', height: 100),
           ),
           Padding(
             padding: EdgeInsets.only(left: 16.0),

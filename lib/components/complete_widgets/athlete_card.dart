@@ -59,7 +59,7 @@ class AthleteCardState extends State<AthleteCard> {
           Padding(
             padding: EdgeInsets.all(16.0),
             child: SizedText(
-              widget.athleteEntry.fullBio,
+              widget.athleteEntry.quote,
               max: 14.0,
               min: 11.0,
               fractionWidth: 0.5,

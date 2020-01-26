@@ -1,10 +1,10 @@
 import 'package:choss_media/components/base/border_button.dart';
-import 'package:choss_media/components/header.dart';
+import 'package:choss_media/components/complete_widgets/header.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import 'package:choss_media/content_bloc/content_bloc.dart';
-import 'components/side_drawer.dart';
+import 'package:choss_media/components/complete_widgets/side_drawer.dart';
 
 void main() => runApp(MyApp());
 
@@ -38,6 +38,7 @@ class ChossMediaHomePageState extends State<ChossMediaHomePage> {
         title: SingleChildScrollView(
           scrollDirection: Axis.horizontal,
           child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: <Widget>[
               BorderButton(
                 iconData: Icons.photo_library,
