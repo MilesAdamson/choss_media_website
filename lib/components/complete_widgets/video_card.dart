@@ -15,12 +15,28 @@ class VideoCard extends StatelessWidget {
     return ContentCard(
       child: Column(
         children: <Widget>[
-          TitleRow(
-            title: videoEntry.title,
-            flavourText: videoEntry.flavourText,
-            avatarPaths: videoEntry.athletes.map((a) => a).toList(),
-            fractionWidth: 0.5,
-          ),
+          if (MediaQuery.of(context).size.width > 700)
+            TitleRow(
+              title: videoEntry.title,
+              flavourText: videoEntry.flavourText,
+              avatarPaths: videoEntry.athletes.map((a) => a).toList(),
+              fractionWidth: 0.5,
+            )
+          else
+            Column(
+              children: <Widget>[
+                TitleRow(
+                  title: videoEntry.title,
+                  flavourText: videoEntry.flavourText,
+                  fractionWidth: 0.8,
+                ),
+                TitleRow(
+                  fractionWidth: 0.5,
+                  avatarPaths: videoEntry.athletes.map((a) => a).toList(),
+                  title: " ",
+                ),
+              ],
+            ),
           Stack(
             children: <Widget>[
               Image.network(

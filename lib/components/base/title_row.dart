@@ -35,6 +35,7 @@ class TitleRow extends StatelessWidget {
                     athleteEntry: entry,
                   ),
                 )),
+          if (avatarPaths != null)
           Container(
             width: 16.0,
           ),

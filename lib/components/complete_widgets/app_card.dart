@@ -69,7 +69,7 @@ class AppCardState extends State<AppCard> {
                 height: 400,
                 child: Padding(
                   padding: EdgeInsets.only(
-                      bottom: landscape ? 64.0 : 16.0, top: 16.0),
+                      bottom: 16.0, top: 16.0),
                   child: SingleChildScrollView(
                     child: SizedText(
                       widget.appEntry.description + widget.appEntry.description + widget.appEntry.description,
