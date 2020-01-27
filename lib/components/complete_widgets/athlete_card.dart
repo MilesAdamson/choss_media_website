@@ -11,7 +11,10 @@ class AthleteCard extends StatefulWidget {
   final AthleteEntry athleteEntry;
   final bool popup;
 
-  AthleteCard({@required this.athleteEntry, this.popup = false});
+  AthleteCard({
+    @required this.athleteEntry,
+    this.popup = false,
+  });
 
   @override
   State<StatefulWidget> createState() => AthleteCardState();
@@ -22,78 +25,41 @@ class AthleteCardState extends State<AthleteCard> {
 
   @override
   Widget build(BuildContext context) {
-    Widget card = ConstrainedBox(
-        constraints: BoxConstraints(
-          maxHeight: 550,
-        ),
-        child: ContentCard(
-      child: landscape
-          ? Row(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: children())
-          : Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: children(),
-            ),
-    ));
-    if (widget.popup) {
-      return Stack(
-        children: <Widget>[
-          card,
-          Positioned(
-            right: 5.0,
-            top: 5.0,
-            child: Material(
-              elevation: 0.0,
-              color: Colors.transparent,
-              child: IconButton(
-                icon: Icon(Icons.close),
-                onPressed: () => Navigator.pop(context),
-              ),
-            ),
-          ),
-        ],
-      );
-    } else {
-      return card;
-    }
-  }
-
-  List<Widget> children() {
     double size = Util.cap((MediaQuery.of(context).size.width / 1000.0) * 700,
         max: 500, min: 100);
+    return Container(
+      alignment: Alignment.bottomCenter,
+      width: size,
+      height: size + 100,
+      child: Card(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.end,
+          children: children(size),
+        ),
+      ),
+    );
+  }
+
+  List<Widget> children(double size) {
     return <Widget>[
+      TitleRow(
+        title: widget.athleteEntry.name,
+        detail: widget.athleteEntry.nickname,
+        avatarPaths: <AthleteEntry>[],
+        leading: widget.popup
+            ? IconButton(
+                icon: Icon(Icons.close),
+                onPressed: () => Navigator.pop(context),
+              )
+            : null,
+      ),
+      Spacer(),
       Image.network(
         widget.athleteEntry.photoPath,
         height: size,
         width: size,
         fit: BoxFit.fitWidth,
         alignment: Alignment.center,
-      ),
-      Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: <Widget>[
-          TitleRow(
-            fractionWidth: landscape ? 0.5 : 0.8,
-            title: widget.athleteEntry.name,
-            detail: widget.athleteEntry.nickname,
-            avatarPaths: <AthleteEntry>[],
-          ),
-          Container(
-              width: landscape
-                  ? MediaQuery.of(context).size.width * 0.5
-                  : MediaQuery.of(context).size.width * 0.9,
-              child: Divider()),
-          Padding(
-            padding: EdgeInsets.all(16.0),
-            child: SizedText(
-              widget.athleteEntry.quote,
-              max: 14.0,
-              min: 11.0,
-              fractionWidth: 0.5,
-            ),
-          )
-        ],
       ),
     ];
   }

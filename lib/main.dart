@@ -167,18 +167,32 @@ class ChossMediaHomePageState extends State<ChossMediaHomePage>
         });
   }
 
-  ListView athletesListView() {
-    return ListView.builder(
-        itemCount: athletes.length + 1,
-        itemBuilder: (context, i) {
-          if (i == 0) {
-            return Header(
-              path: '/assets/cover_1080.jpg',
-              contentName: "Athletes",
-            );
-          } else {
-            return athletes[i - 1];
-          }
-        });
+  Widget athletesListView() {
+    return SingleChildScrollView(
+      child: Column(
+        children: <Widget>[
+          Header(
+            path: '/assets/cover_1080.jpg',
+            contentName: "Athletes",
+          ),
+          Wrap(
+            children:athletes,
+          ),
+        ],
+      ),
+    );
+
+//    return ListView.builder(
+//        itemCount: athletes.length + 1,
+//        itemBuilder: (context, i) {
+//          if (i == 0) {
+//            return Header(
+//              path: '/assets/cover_1080.jpg',
+//              contentName: "Athletes",
+//            );
+//          } else {
+//            return athletes[i - 1];
+//          }
+//        });
   }
 }
