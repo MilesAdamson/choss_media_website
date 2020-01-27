@@ -8,7 +8,8 @@ class SizedText extends StatefulWidget {
   final Color color;
   final double fractionWidth;
 
-  SizedText(this.text, {this.max = 32.0, this.min = 16.0, this.color, this.fractionWidth = 0.5});
+  SizedText(this.text,
+      {this.max = 32.0, this.min = 16.0, this.color, this.fractionWidth});
 
   @override
   State<StatefulWidget> createState() => SizedTextState();
@@ -21,22 +22,27 @@ class SizedTextState extends State<SizedText> {
         (MediaQuery.of(context).size.width / 800.0) * widget.max,
         min: widget.min,
         max: widget.max);
-
-    return Container(
-      width: MediaQuery.of(context).size.width * widget.fractionWidth,
-      child: Flex(
-        direction: Axis.horizontal,
-        children: <Widget>[
-          Flexible(
-            child: Text(
-              widget.text,
-              style: TextStyle(
-                  fontSize: size,
-                  color: widget.color ?? Colors.black),
+    if (widget.fractionWidth != null) {
+      return Container(
+        width: MediaQuery.of(context).size.width * widget.fractionWidth,
+        child: Flex(
+          direction: Axis.horizontal,
+          children: <Widget>[
+            Flexible(
+              child: Text(
+                widget.text,
+                style: TextStyle(
+                    fontSize: size, color: widget.color ?? Colors.black),
+              ),
             ),
-          ),
-        ],
-      ),
-    );
+          ],
+        ),
+      );
+    } else {
+      return Text(
+        widget.text,
+        style: TextStyle(fontSize: size, color: widget.color ?? Colors.black),
+      );
+    }
   }
 }

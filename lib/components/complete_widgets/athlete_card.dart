@@ -27,41 +27,37 @@ class AthleteCardState extends State<AthleteCard> {
   Widget build(BuildContext context) {
     double size = Util.cap((MediaQuery.of(context).size.width / 1000.0) * 700,
         max: 500, min: 100);
+
+    double adjust = MediaQuery.of(context).size.width < 800 ? 65 : 90;
     return Container(
       alignment: Alignment.bottomCenter,
       width: size,
-      height: size + 100,
       child: Card(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.end,
-          children: children(size),
+          children: <Widget>[
+            TitleRow(
+              title: widget.athleteEntry.name,
+              detail: widget.athleteEntry.nickname,
+              avatarPaths: <AthleteEntry>[],
+              leading: widget.popup
+                  ? IconButton(
+                      icon: Icon(Icons.close),
+                      onPressed: () => Navigator.pop(context),
+                    )
+                  : null,
+            ),
+            Image.network(
+              widget.athleteEntry.photoPath,
+              height: size,
+              width: size,
+              fit: BoxFit.fitWidth,
+              alignment: Alignment.center,
+            ),
+          ],
         ),
       ),
     );
-  }
-
-  List<Widget> children(double size) {
-    return <Widget>[
-      TitleRow(
-        title: widget.athleteEntry.name,
-        detail: widget.athleteEntry.nickname,
-        avatarPaths: <AthleteEntry>[],
-        leading: widget.popup
-            ? IconButton(
-                icon: Icon(Icons.close),
-                onPressed: () => Navigator.pop(context),
-              )
-            : null,
-      ),
-      Spacer(),
-      Image.network(
-        widget.athleteEntry.photoPath,
-        height: size,
-        width: size,
-        fit: BoxFit.fitWidth,
-        alignment: Alignment.center,
-      ),
-    ];
   }
 
   Widget instaButton(BuildContext context) {

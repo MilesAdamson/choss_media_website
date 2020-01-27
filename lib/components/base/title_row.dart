@@ -18,7 +18,7 @@ class TitleRow extends StatelessWidget {
     this.flavourText,
     this.detail,
     this.avatarPaths,
-    @required this.fractionWidth,
+    this.fractionWidth,
   });
 
   @override
