@@ -28,7 +28,7 @@ class TitleRow extends StatelessWidget {
       child: Row(
         children: <Widget>[
           if (leading != null) leading,
-          if (avatarPaths != null)
+          if (avatarPaths != null && avatarPaths.isNotEmpty)
             ...avatarPaths.map((entry) => Padding(
                   padding: EdgeInsets.only(right: 4.0),
                   child: ChossAvatar(

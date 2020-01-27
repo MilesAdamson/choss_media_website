@@ -3,6 +3,80 @@ import 'package:flutter/material.dart';
 
 List<PhotoEntry> photoEntries = [
   PhotoEntry(
+    takenBy: 'Miles Adamson',
+    title: "Too Tall to Fall",
+    flavourText:
+    "Tiny bits of chalk arc from right to left up the Grandma Peabody.",
+    assetPath: "/assets/photos/too_tall_line",
+  ),
+  PhotoEntry(
+    athleteEntry: athleteEntries[AthleteNames.matt],
+    takenBy: 'Miles Adamson',
+    title: "Grandpa Peabody 5.8",
+    flavourText:
+        "If you want to do Evilution or the like, it would be good to see how you feel on this one first.",
+    assetPath: "/assets/photos/matt_8",
+  ),
+  PhotoEntry(
+    athleteEntry: athleteEntries[AthleteNames.kelsey],
+    takenBy: 'Miles Adamson',
+    title: "One Slabby Boi",
+    flavourText: "This slab is a nice warm up for Heavenly Path.",
+    assetPath: "/assets/photos/kelsey_slab",
+  ),
+  PhotoEntry(
+    athleteEntry: athleteEntries[AthleteNames.kelsey],
+    takenBy: 'Miles Adamson',
+    title: "Kelsey Warms Up at the Sad Boulders",
+    flavourText: "She was sad when she missed the good pocket",
+    assetPath: "/assets/photos/kelsey_sads",
+  ),
+  PhotoEntry(
+    takenBy: 'Miles Adamson',
+    title: "Jimmy Webb Sends Lucid Dreaming",
+    flavourText:
+        "If you guys need some footage for reel rock or whatever just hit me up",
+    assetPath: "/assets/photos/jimmy_lucid",
+  ),
+  PhotoEntry(
+    athleteEntry: athleteEntries[AthleteNames.andrew],
+    takenBy: 'Miles Adamson',
+    title: "Heavenly Path - V1",
+    flavourText: "Andrew climbs one of the best V1's in the world.",
+    assetPath: "/assets/photos/drew_heavenly",
+  ),
+  PhotoEntry(
+    athleteEntry: athleteEntries[AthleteNames.matt],
+    takenBy: 'Miles Adamson',
+    title: "KILLABEE",
+    flavourText:
+    "My WORD",
+    assetPath: "/assets/photos/matt_glasses",
+  ),
+  PhotoEntry(
+    athleteEntry: athleteEntries[AthleteNames.alex],
+    takenBy: 'Miles Adamson',
+    title: "Hmm",
+    flavourText: 'HMM',
+    assetPath: "/assets/photos/alex_tree",
+  ),
+  PhotoEntry(
+    athleteEntry: athleteEntries[AthleteNames.alex],
+    takenBy: 'Miles Adamson',
+    title: "Alex on Grandpa Peabody",
+    flavourText:
+        'With the light fading, Alex coils his ropes and puts away his gear. And by his ropes and gear, I mean mine',
+    assetPath: "/assets/photos/alex_coil",
+  ),
+  PhotoEntry(
+    athleteEntry: athleteEntries[AthleteNames.alex],
+    takenBy: 'Miles Adamson',
+    title: "World First V20",
+    flavourText:
+        'Alex climbed this V20 in his street shoes, with a pad balanced on top of his head.',
+    assetPath: "/assets/photos/alex_pad",
+  ),
+  PhotoEntry(
     athleteEntry: athleteEntries[AthleteNames.zach],
     takenBy: 'Miles Adamson',
     title: "Zach and a Core Shot",
@@ -92,5 +166,5 @@ class PhotoEntry {
       @required this.takenBy,
       @required this.flavourText,
       @required this.assetPath,
-      @required this.athleteEntry});
+      this.athleteEntry});
 }

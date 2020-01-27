@@ -17,7 +17,9 @@ class PhotoCard extends StatelessWidget {
         children: <Widget>[
           TitleRow(
             flavourText: photoEntry.flavourText,
-            avatarPaths: <AthleteEntry>[photoEntry.athleteEntry],
+            avatarPaths: <AthleteEntry>[photoEntry.athleteEntry]
+                .where((x) => x != null)
+                .toList(),
             title: photoEntry.title,
             detail: "Photo by: ${photoEntry.takenBy}",
             fractionWidth: 0.75,
