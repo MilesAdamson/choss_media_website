@@ -18,18 +18,17 @@ class AppCard extends StatefulWidget {
 class AppCardState extends State<AppCard> {
   int galleryIndex = 0;
 
-  bool get landscape => MediaQuery.of(context).size.width > 1000.0;
+  bool get wideScreen => MediaQuery.of(context).size.width > 1000.0;
 
   @override
   Widget build(BuildContext context) {
     return ContentCard(
-      child: landscape
+      child: wideScreen
           ? Row(
               mainAxisAlignment: MainAxisAlignment.start,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: children())
           : Container(
-              height: MediaQuery.of(context).size.height * 1.4,
               child: Column(
                 children: children(),
               ),
@@ -47,7 +46,7 @@ class AppCardState extends State<AppCard> {
         ],
       ),
       Padding(
-        padding: EdgeInsets.symmetric(horizontal: 32.0),
+        padding: EdgeInsets.symmetric(horizontal: wideScreen ? 32.0 : 8.0),
         child: Column(
           children: <Widget>[
             TitleRow(
@@ -68,17 +67,17 @@ class AppCardState extends State<AppCard> {
               child: Container(
                 padding: EdgeInsets.all(8.0),
                 width: MediaQuery.of(context).size.width *
-                    (landscape ? 0.5 : 0.9),
+                    (wideScreen ? 0.5 : 0.9),
                 height: 400,
                 child: Padding(
                   padding: EdgeInsets.only(
                       bottom: 16.0, top: 16.0),
                   child: SingleChildScrollView(
                     child: SizedText(
-                      widget.appEntry.description + widget.appEntry.description + widget.appEntry.description,
+                      widget.appEntry.description,
                       max: 16.0,
-                      min: 12.0,
-                      fractionWidth: landscape ? 0.5 : 0.9,
+                      min: 11.0,
+                      fractionWidth: 0.5
                     ),
                   ),
                 ),
