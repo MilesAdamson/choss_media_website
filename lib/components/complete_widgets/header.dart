@@ -1,9 +1,13 @@
-import 'package:choss_media/content_bloc/content_bloc.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 
 class Header extends StatelessWidget {
-  Header();
+  final String contentName;
+  final String path;
+
+  Header({
+    @required this.path,
+    @required this.contentName,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -48,23 +52,18 @@ class Header extends StatelessWidget {
                       color: Colors.white,
                       fontSize: isSmallScreen ? 20.0 : 48.0),
                 ),
-                BlocBuilder(
-                  bloc: ContentBloc.getInstance(),
-                  builder: (context, ContentState state) {
-                    return Text(
-                      state.contentSelection.toString().split(".").last,
-                      style: TextStyle(
-                          shadows: <Shadow>[
-                            Shadow(
-                              color: Colors.black,
-                              blurRadius: 4.0,
-                            ),
-                          ],
-                          color: Colors.white,
-                          fontSize: isSmallScreen ? 14.0 : 26.0),
-                    );
-                  },
-                )
+                Text(
+                  contentName,
+                  style: TextStyle(
+                      shadows: <Shadow>[
+                        Shadow(
+                          color: Colors.black,
+                          blurRadius: 4.0,
+                        ),
+                      ],
+                      color: Colors.white,
+                      fontSize: isSmallScreen ? 14.0 : 26.0),
+                ),
               ],
             ),
           )
