@@ -63,6 +63,11 @@ Map<AthleteNames, AthleteEntry> athleteEntries = <AthleteNames, AthleteEntry>{
       igURL: 'https://www.instagram.com/stephen.salvador/',
      ),
   AthleteNames.bella: AthleteEntry(
+    name: 'Dusty',
+    nickname: "Duddy",
+    photoPath: "assets/athletes/dusty.jpg",
+  ),
+  AthleteNames.bella: AthleteEntry(
     name: 'Bella',
     nickname: "BELLAAA",
     photoPath: "assets/athletes/bella.jpg",
