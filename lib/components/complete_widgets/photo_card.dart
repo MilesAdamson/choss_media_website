@@ -13,9 +13,7 @@ class PhotoCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Center(
       child: Container(
-        constraints: BoxConstraints(
-          maxWidth: 1200
-        ),
+        constraints: BoxConstraints(maxWidth: 1200),
         child: ContentCard(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -27,11 +25,12 @@ class PhotoCard extends StatelessWidget {
                     .toList(),
                 title: photoEntry.title,
                 detail: "Photo by: ${photoEntry.takenBy}",
+                fractionWidth:
+                    MediaQuery.of(context).size.width < 1000 ? 0.6 : null,
               ),
               Container(
                 constraints: BoxConstraints(
-                  minHeight: MediaQuery.of(context).size.height * 0.4
-                ),
+                    minHeight: MediaQuery.of(context).size.height * 0.4),
                 child: Image.network(
                   photoEntry.assetPath + '.jpg',
                   width: MediaQuery.of(context).size.width,

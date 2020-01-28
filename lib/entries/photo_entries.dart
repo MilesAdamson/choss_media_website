@@ -14,7 +14,7 @@ List<PhotoEntry> photoEntries = [
     takenBy: 'Miles Adamson',
     title: "Grandpa Peabody 5.8",
     flavourText:
-        "If you want to do Evilution or the like, it would be good to see how you feel on this one first.",
+        "The killabee scopes out Ambrosia.",
     assetPath: "/assets/photos/matt_8",
   ),
   PhotoEntry(
