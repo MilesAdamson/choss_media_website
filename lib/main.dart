@@ -181,18 +181,5 @@ class ChossMediaHomePageState extends State<ChossMediaHomePage>
         ],
       ),
     );
-
-//    return ListView.builder(
-//        itemCount: athletes.length + 1,
-//        itemBuilder: (context, i) {
-//          if (i == 0) {
-//            return Header(
-//              path: '/assets/cover_1080.jpg',
-//              contentName: "Athletes",
-//            );
-//          } else {
-//            return athletes[i - 1];
-//          }
-//        });
   }
 }
