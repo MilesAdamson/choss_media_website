@@ -28,7 +28,6 @@ class AthleteCardState extends State<AthleteCard> {
     double size = Util.cap((MediaQuery.of(context).size.width / 1000.0) * 700,
         max: 500, min: 100);
 
-    double adjust = MediaQuery.of(context).size.width < 800 ? 65 : 90;
     return Container(
       alignment: Alignment.bottomCenter,
       width: size,

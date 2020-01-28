@@ -128,7 +128,7 @@ class ChossMediaHomePageState extends State<ChossMediaHomePage>
         itemBuilder: (context, i) {
           if (i == 0) {
             return Header(
-              path: '/assets/cover_1080.jpg',
+              path: '/assets/cover_large.jpg',
               contentName: "Photos",
             );
           } else {
@@ -143,7 +143,7 @@ class ChossMediaHomePageState extends State<ChossMediaHomePage>
         itemBuilder: (context, i) {
           if (i == 0) {
             return Header(
-              path: '/assets/cover_1080.jpg',
+              path: '/assets/cover_large.jpg',
               contentName: "Apps",
             );
           } else {
@@ -158,7 +158,7 @@ class ChossMediaHomePageState extends State<ChossMediaHomePage>
         itemBuilder: (context, i) {
           if (i == 0) {
             return Header(
-              path: '/assets/cover_1080.jpg',
+              path: '/assets/cover_large.jpg',
               contentName: "Apps",
             );
           } else {
@@ -172,7 +172,7 @@ class ChossMediaHomePageState extends State<ChossMediaHomePage>
       child: Column(
         children: <Widget>[
           Header(
-            path: '/assets/cover_1080.jpg',
+            path: '/assets/cover_large.jpg',
             contentName: "Athletes",
           ),
           Wrap(

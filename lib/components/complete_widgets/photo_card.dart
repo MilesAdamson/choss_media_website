@@ -11,25 +11,31 @@ class PhotoCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ContentCard(
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: <Widget>[
-          TitleRow(
-            flavourText: photoEntry.flavourText,
-            avatarPaths: <AthleteEntry>[photoEntry.athleteEntry]
-                .where((x) => x != null)
-                .toList(),
-            title: photoEntry.title,
-            detail: "Photo by: ${photoEntry.takenBy}",
-            fractionWidth: 0.75,
+    return Center(
+      child: Container(
+        constraints: BoxConstraints(
+          maxWidth: 1200
+        ),
+        child: ContentCard(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: <Widget>[
+              TitleRow(
+                flavourText: photoEntry.flavourText,
+                avatarPaths: <AthleteEntry>[photoEntry.athleteEntry]
+                    .where((x) => x != null)
+                    .toList(),
+                title: photoEntry.title,
+                detail: "Photo by: ${photoEntry.takenBy}",
+              ),
+              Image.network(
+                photoEntry.assetPath + '.jpg',
+                width: MediaQuery.of(context).size.width,
+                fit: BoxFit.fitHeight,
+              ),
+            ],
           ),
-          Image.network(
-            photoEntry.assetPath + '.jpg',
-            width: MediaQuery.of(context).size.width,
-            fit: BoxFit.fitHeight,
-          ),
-        ],
+        ),
       ),
     );
   }
