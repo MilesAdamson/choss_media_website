@@ -28,10 +28,15 @@ class PhotoCard extends StatelessWidget {
                 title: photoEntry.title,
                 detail: "Photo by: ${photoEntry.takenBy}",
               ),
-              Image.network(
-                photoEntry.assetPath + '.jpg',
-                width: MediaQuery.of(context).size.width,
-                fit: BoxFit.fitHeight,
+              Container(
+                constraints: BoxConstraints(
+                  minHeight: MediaQuery.of(context).size.height * 0.4
+                ),
+                child: Image.network(
+                  photoEntry.assetPath + '.jpg',
+                  width: MediaQuery.of(context).size.width,
+                  fit: BoxFit.fitHeight,
+                ),
               ),
             ],
           ),
