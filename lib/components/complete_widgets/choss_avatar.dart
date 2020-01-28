@@ -11,16 +11,22 @@ class ChossAvatar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-
     double rawSize = (MediaQuery.of(context).size.width / 1000.0) * 75.0;
     double size = Util.cap(rawSize, min: 50.0, max: 100.0);
 
     return InkWell(
       onTap: () => showDialog(
           context: context,
-          builder: (context) => AthleteCard(
-                athleteEntry: athleteEntry,
-            popup: true,
+          builder: (context) => AlertDialog(
+                content: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  children: <Widget>[
+                    AthleteCard(
+                      athleteEntry: athleteEntry,
+                      popup: true,
+                    ),
+                  ],
+                ),
               )),
       child: Material(
         borderRadius: BorderRadius.all(Radius.circular(100.0)),

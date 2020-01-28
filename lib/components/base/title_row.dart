@@ -2,7 +2,7 @@ import 'package:choss_media/components/base/title_text.dart';
 import 'package:choss_media/entries/athlete_entries.dart';
 import 'package:flutter/material.dart';
 
-import 'choss_avatar.dart';
+import 'package:choss_media/components/complete_widgets/choss_avatar.dart';
 
 class TitleRow extends StatelessWidget {
   final List<AthleteEntry> avatarPaths;
