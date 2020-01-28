@@ -10,7 +10,8 @@ enum AthleteNames {
   andrew,
   bella,
   boston,
-  stephen
+  stephen,
+  dusty
 }
 
 Map<AthleteNames, AthleteEntry> athleteEntries = <AthleteNames, AthleteEntry>{
@@ -62,7 +63,7 @@ Map<AthleteNames, AthleteEntry> athleteEntries = <AthleteNames, AthleteEntry>{
       photoPath: "assets/athletes/stephen.jpg",
       igURL: 'https://www.instagram.com/stephen.salvador/',
      ),
-  AthleteNames.bella: AthleteEntry(
+  AthleteNames.dusty: AthleteEntry(
     name: 'Dusty',
     nickname: "Duddy",
     photoPath: "assets/athletes/dusty.jpg",
