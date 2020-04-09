@@ -3,8 +3,19 @@ import 'package:flutter/material.dart';
 
 List<VideoEntry> videoEntries = <VideoEntry>[
   VideoEntry(
+    title: "Andrew Funk: Bishmas",
+    featuring: [AthleteNames.andrew],
+    path: '/assets/videos/bishmas.jpg',
+    youtubeUrl: 'https://www.youtube.com/watch?v=R8jRO1wyRh8',
+  ),
+  VideoEntry(
     title: "First Ascent of Too Tall to Fall - V10",
-    featuring: [AthleteNames.miles, AthleteNames.matt, AthleteNames.andrew, AthleteNames.alex],
+    featuring: [
+      AthleteNames.miles,
+      AthleteNames.matt,
+      AthleteNames.andrew,
+      AthleteNames.alex
+    ],
     path: '/assets/videos/too_tall.jpg',
     youtubeUrl: 'https://www.youtube.com/watch?v=fkJ9DJcgi9g',
   ),
