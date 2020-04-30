@@ -2,6 +2,29 @@ import 'package:flutter/material.dart';
 
 List<AppEntry> appEntries = <AppEntry>[
   AppEntry(
+    iconPath: "/assets/apps/setter/icon.png",
+    storeLink: "https://play.google.com/store/apps/details?id=com.miles.setter",
+    title: "Setter",
+    description:
+        "Setter gives you a local database for walls and boulders. Remember your boulders on fill walls and home walls easily."
+        "\n1. Take a photo of your wall"
+        "\n2. Mark holds in your boulder problem"
+        "\n3. Save your boulder!"
+        "\n\nDrag a hold to move it, double tap to change its color. Tap and hold to delete. That's all there is to it."
+        "\n\nSetter is optimized for personal use, with an offline database. While you cannot share boulders online, this comes with advantages:"
+        "\n\n- No sign up process"
+        "\n- No restrictions on walls, or the number you create"
+        "\n- No restrictions on boulders, or the number you create"
+        "\n- No administrative permissions for deletion / editing of climbs"
+        "\n- No internet required",
+    gallery: [
+      "/assets/apps/setter/1.jpg",
+      "/assets/apps/setter/2.jpg",
+      "/assets/apps/setter/3.jpg",
+      "/assets/apps/setter/4.jpg",
+    ],
+  ),
+  AppEntry(
     iconPath: "/assets/apps/interval/icon.png",
     storeLink:
         "https://play.google.com/store/apps/details?id=com.miles.adamson.interval&hl=en",
