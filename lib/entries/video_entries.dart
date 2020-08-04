@@ -3,6 +3,12 @@ import 'package:flutter/material.dart';
 
 List<VideoEntry> videoEntries = <VideoEntry>[
   VideoEntry(
+    title: "First Ascent of Impostor Syndrome - 14d",
+    featuring: [AthleteNames.miles],
+    path: '/assets/videos/impostor.jpg',
+    youtubeUrl: 'https://youtu.be/gSKOUG8gzRU',
+  ),
+  VideoEntry(
     title: "Covid-19 and the Home Wall",
     featuring: [AthleteNames.miles, AthleteNames.matt, AthleteNames.kelsey],
     path: '/assets/videos/home_wall.jpg',

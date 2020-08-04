@@ -10,6 +10,7 @@ enum AthleteNames {
   andrew,
   bella,
   boston,
+  franco,
   stephen,
   dusty
 }
@@ -57,12 +58,18 @@ Map<AthleteNames, AthleteEntry> athleteEntries = <AthleteNames, AthleteEntry>{
     photoPath: "assets/athletes/drew.jpg",
     igURL: 'https://www.instagram.com/andrew__funk/?hl=en',
   ),
+  AthleteNames.franco: AthleteEntry(
+    name: 'Francois Lacroix-Leung ',
+    nickname: "Franco",
+    photoPath: "assets/athletes/franco.jpg",
+    igURL: 'https://www.instagram.com/clipmedia1/',
+  ),
   AthleteNames.stephen: AthleteEntry(
-      name: 'Stephen Salvador',
-      nickname: "Mango Tango",
-      photoPath: "assets/athletes/stephen.jpg",
-      igURL: 'https://www.instagram.com/stephen.salvador/',
-     ),
+    name: 'Stephen Salvador',
+    nickname: "Mango Tango",
+    photoPath: "assets/athletes/stephen.jpg",
+    igURL: 'https://www.instagram.com/stephen.salvador/',
+  ),
   AthleteNames.dusty: AthleteEntry(
     name: 'Dusty',
     nickname: "Duddy",
